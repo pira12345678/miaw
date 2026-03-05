@@ -1,0 +1,699 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tugas 7</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bai+Jamjuree:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;1,200;1,300;1,400;1,500;1,600;1,700&family=Barlow+Semi+Condensed:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Karla:ital,wght@0,200..800;1,200..800&family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./assets/images/favicon-32x32.png"
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+
+  <body
+    class="font-Noto bg-gradient-to-b from-[#040918] to-[#091540] text-white min-h-screen p-8"
+  >
+    <!-- Header -->
+    <div class="grid grid-cols-1 text-red">
+      <div class="bg-slate-800 rounded-2xl px-5 py-4 shadow-lg" id="top-card">
+        <div class="flex items-center justify-between">
+          <div class="flex items-center gap-3" id="header-left">
+            <img
+              src="./assets/images/logo (2).png"
+              class="h-8 object-contain"
+              id="header-logo"
+            />
+            <h2 class="font-semibold text-xl leading-none" id="main-title">
+              Extensions
+            </h2>
+          </div>
+          <div
+            id="tes"
+            class="bg-slate-700 p-3 rounded-lg flex items-center justify-center cursor-pointer hover:border-red-600 transition"
+          >
+            <div id="theme-toggle">
+              <img
+                src="./assets/images/icon-sun.svg"
+                class="w-5 h-5"
+                id="theme-icon"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div
+      class="flex flex-col text-center md:flex-row md:justify-between md:items-center gap-4 mb-3 mt-16 p-3"
+    >
+      <h1 class="text-2xl font-bold">Extensions List</h1>
+
+      <div class="flex justify-center gap-3 w-full md:w-auto">
+        <button
+          id="filter-all"
+          class="bg-slate-700 px-5 py-3 rounded-full text-sm text-black focus-within:font-semibold focus-within:text-white"
+        >
+          All
+        </button>
+        <button
+          id="filter-active"
+          class="bg-slate-700 px-6 py-3 rounded-full text-sm text-black focus-within:font-semibold focus-within:text-white"
+        >
+          Active
+        </button>
+        <button
+          id="filter-inactive"
+          class="bg-slate-700 px-7 py-3 rounded-full text-sm text-black focus-within:font-semibold focus-within:text-white"
+        >
+          Inactive
+        </button>
+      </div>
+    </div>
+
+    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6 items-stretch">
+      <!-- card 1 -->
+      <div
+        class="card bg-slate-800 rounded-2xl p-5 shadow-lg flex flex-col h-full"
+        data-active="true"
+      >
+        <div class="flex gap-4 flex-1">
+          <img
+            src="./assets/images/logo-devlens.svg"
+            class="w-12 h-12 rounded-lg object-cover"
+          />
+          <div>
+            <h2 class="font-semibold text-lg">DevLens</h2>
+            <p class="text-slate-400 text-sm">
+              Inspect layouts and visualize boundaries.
+            </p>
+          </div>
+        </div>
+        <div class="flex justify-between items-center mt-6">
+          <button
+            class="border border-slate-600 px-6 py-2 rounded-3xl text-sm hover:bg-red-600 hover:border-red-600 hover:text-white"
+          >
+            Remove
+          </button>
+          <div
+            class="toggle w-9 h-5 bg-red-600 rounded-full relative cursor-pointer"
+          >
+            <div
+              class="w-4 h-4 bg-white rounded-full absolute right-0.5 top-0.5"
+            ></div>
+          </div>
+        </div>
+      </div>
+      <!-- card 2 -->
+      <div
+        class="card bg-slate-800 rounded-2xl p-5 shadow-lg flex flex-col h-full"
+        data-active="true"
+      >
+        <div class="flex gap-4 flex-1">
+          <img
+            src="./assets/images/logo-style-spy.svg"
+            class="w-12 h-12 rounded-lg object-cover"
+          />
+          <div>
+            <h2 class="font-semibold text-lg">StyleSpy</h2>
+            <p class="text-slate-400 text-sm">
+              Instantly analyze and copy CSS from any webpage element.
+            </p>
+          </div>
+        </div>
+        <div class="flex justify-between items-center mt-6">
+          <button
+            class="border border-slate-600 px-6 py-2 rounded-3xl text-sm hover:bg-red-600 hover:border-red-600 focus-within:border-red-600 hover:text-white"
+          >
+            Remove
+          </button>
+          <div
+            class="toggle w-9 h-5 bg-red-600 rounded-full relative cursor-pointer"
+          >
+            <div
+              class="w-4 h-4 bg-white rounded-full absolute right-0.5 top-0.5"
+            ></div>
+          </div>
+        </div>
+      </div>
+      <!-- card 3 -->
+      <div
+        class="card bg-slate-800 rounded-2xl p-5 shadow-lg flex flex-col h-full"
+        data-active="false"
+      >
+        <div class="flex gap-4 flex-1">
+          <img
+            src="./assets/images/logo-speed-boost.svg"
+            class="w-12 h-12 rounded-lg object-cover"
+          />
+          <div>
+            <h2 class="font-semibold text-lg">SpeedBoost</h2>
+            <p class="text-slate-400 text-sm">
+              Optimizes browser resource usage to accelerate page loading.
+            </p>
+          </div>
+        </div>
+        <div class="flex justify-between items-center mt-6">
+          <button
+            class="border border-slate-600 px-6 py-2 rounded-3xl text-sm hover:bg-red-600 hover:border-red-600 hover:text-white"
+          >
+            Remove
+          </button>
+          <div
+            class="toggle w-9 h-5 bg-red-600 rounded-full relative cursor-pointer"
+          >
+            <div
+              class="w-4 h-4 bg-white rounded-full absolute right-0.5 top-0.5"
+            ></div>
+          </div>
+        </div>
+      </div>
+      <!-- card 4 -->
+      <div
+        class="card bg-slate-800 rounded-2xl p-5 shadow-lg flex flex-col h-full"
+        data-active="true"
+      >
+        <div class="flex gap-4 flex-1">
+          <img
+            src="./assets/images/logo-json-wizard.svg"
+            class="w-12 h-12 rounded-lg object-cover"
+          />
+          <div>
+            <h2 class="font-semibold text-lg">JSONWizard</h2>
+            <p class="text-slate-400 text-sm">
+              Formats, validates, and prettifies JSON responses in-browser.
+            </p>
+          </div>
+        </div>
+        <div class="flex justify-between items-center mt-5">
+          <button
+            class="border border-slate-600 px-6 py-2 rounded-3xl text-sm hover:bg-red-600 hover:border-red-600 hover:text-white"
+          >
+            Remove
+          </button>
+          <div
+            class="toggle w-9 h-5 bg-red-600 rounded-full relative cursor-pointer"
+          >
+            <div
+              class="w-4 h-4 bg-white rounded-full absolute right-0.5 top-0.5 text-red"
+            ></div>
+          </div>
+        </div>
+      </div>
+      <!-- card 5 -->
+      <div
+        class="card bg-slate-800 rounded-2xl p-5 shadow-lg flex flex-col h-full"
+        data-active="true"
+      >
+        <div class="flex gap-4 flex-1">
+          <img
+            src="./assets/images/logo-tab-master-pro.svg"
+            class="w-12 h-12 rounded-lg object-cover"
+          />
+          <div>
+            <h2 class="font-semibold text-lg">TabMaster Pro</h2>
+            <p class="text-slate-400 text-sm">
+              Organizes browser tabs into groups and sessions.
+            </p>
+          </div>
+        </div>
+        <div class="flex justify-between items-center mt-5">
+          <button
+            class="border border-slate-600 px-6 py-2 rounded-3xl text-sm hover:bg-red-600 hover:border-red-600 hover:text-white"
+          >
+            Remove
+          </button>
+          <div
+            class="toggle w-9 h-5 bg-red-600 rounded-full relative cursor-pointer"
+          >
+            <div
+              class="w-4 h-4 bg-white rounded-full absolute right-0.5 top-0.5"
+            ></div>
+          </div>
+        </div>
+      </div>
+      <!-- card 6 -->
+      <div
+        class="card bg-slate-800 rounded-2xl p-5 shadow-lg flex flex-col h-full"
+        data-active="false"
+      >
+        <div class="flex gap-4 flex-1">
+          <img
+            src="./assets/images/logo-viewport-buddy.svg"
+            class="w-12 h-12 rounded-lg object-cover"
+          />
+          <div>
+            <h2 class="font-semibold text-lg">ViewportBuddy</h2>
+            <p class="text-slate-400 text-sm">
+              Simulates various screen resolutions directly within the browser.
+            </p>
+          </div>
+        </div>
+        <div class="flex justify-between items-center mt-3">
+          <button
+            class="border border-slate-600 px-6 py-2 rounded-3xl text-sm hover:bg-red-600 hover:border-red-600 hover:text-white"
+          >
+            Remove
+          </button>
+          <div
+            class="toggle w-9 h-5 bg-red-600 rounded-full relative cursor-pointer"
+          >
+            <div
+              class="w-4 h-4 bg-white rounded-full absolute right-0.5 top-0.5"
+            ></div>
+          </div>
+        </div>
+      </div>
+      <!-- card 7 -->
+      <div
+        class="card bg-slate-800 rounded-2xl p-5 shadow-lg flex flex-col h-full"
+        data-active="true"
+      >
+        <div class="flex gap-4 flex-1">
+          <img
+            src="./assets/images/logo-markup-notes.svg"
+            class="w-12 h-12 rounded-lg object-cover"
+          />
+          <div>
+            <h2 class="font-semibold text-lg">Markup Notes</h2>
+            <p class="text-slate-400 text-sm">
+              Enables annotation and notes directly onto webpages for
+              collaborative debugging.
+            </p>
+          </div>
+        </div>
+        <div class="flex justify-between items-center mt-2">
+          <button
+            class="border border-slate-600 px-6 py-2 rounded-3xl text-sm hover:bg-red-600 hover:border-red-600 hover:text-white"
+          >
+            Remove
+          </button>
+          <div
+            class="toggle w-9 h-5 bg-red-600 rounded-full relative cursor-pointer"
+          >
+            <div
+              class="w-4 h-4 bg-white rounded-full absolute right-0.5 top-0.5"
+            ></div>
+          </div>
+        </div>
+      </div>
+      <!-- card 8 -->
+      <div
+        class="card bg-slate-800 rounded-2xl p-5 shadow-lg flex flex-col h-full"
+        data-active="false"
+      >
+        <div class="flex gap-4 flex-1">
+          <img
+            src="./assets/images/logo-grid-guides.svg"
+            class="w-12 h-12 rounded-lg object-cover"
+          />
+          <div>
+            <h2 class="font-semibold text-lg">GridGuides</h2>
+            <p class="text-slate-400 text-sm">
+              Overlay customizable grids and alignment guides on any webpage.
+            </p>
+          </div>
+        </div>
+        <div class="flex justify-between items-center mt-2">
+          <button
+            class="border border-slate-600 px-6 py-2 rounded-3xl text-sm hover:bg-red-600 hover:border-red-600 hover:text-white"
+          >
+            Remove
+          </button>
+          <div
+            class="toggle w-9 h-5 bg-red-600 rounded-full relative cursor-pointer"
+          >
+            <div
+              class="w-4 h-4 bg-white rounded-full absolute right-0.5 top-0.5"
+            ></div>
+          </div>
+        </div>
+      </div>
+      <!-- card 9 -->
+      <div
+        class="card bg-slate-800 rounded-2xl p-5 shadow-lg flex flex-col h-full"
+        data-active="true"
+      >
+        <div class="flex gap-4 flex-1">
+          <img
+            src="./assets/images/logo-palette-picker.svg"
+            class="w-12 h-12 rounded-lg object-cover"
+          />
+          <div>
+            <h2 class="font-semibold text-lg">Palette Picker</h2>
+            <p class="text-slate-400 text-sm">
+              Instantly extracts color palettes from any webpage.
+            </p>
+          </div>
+        </div>
+        <div class="flex justify-between items-center mt-2">
+          <button
+            class="border border-slate-600 px-6 py-2 rounded-3xl text-sm hover:bg-red-600 hover:border-red-600 hover:text-white"
+          >
+            Remove
+          </button>
+          <div
+            class="toggle w-9 h-5 bg-red-600 rounded-full relative cursor-pointer"
+          >
+            <div
+              class="w-4 h-4 bg-white rounded-full absolute right-0.5 top-0.5"
+            ></div>
+          </div>
+        </div>
+      </div>
+      <!-- card 10 -->
+      <div
+        class="card bg-slate-800 rounded-2xl p-5 shadow-lg flex flex-col h-full"
+        data-active="true"
+      >
+        <div class="flex gap-4 flex-1">
+          <img
+            src="./assets/images/logo-link-checker.svg"
+            class="w-12 h-12 rounded-lg object-cover"
+          />
+          <div>
+            <h2 class="font-semibold text-lg">LinkChecker</h2>
+            <p class="text-slate-400 text-sm">
+              Scans and highlights broken links on any page.
+            </p>
+          </div>
+        </div>
+        <div class="flex justify-between items-center mt-3">
+          <button
+            class="border border-slate-600 px-6 py-2 rounded-3xl text-sm hover:bg-red-600 hover:border-red-600 hover:text-white"
+          >
+            Remove
+          </button>
+          <div
+            class="toggle w-9 h-5 bg-red-600 rounded-full relative cursor-pointer"
+          >
+            <div
+              class="w-4 h-4 bg-white rounded-full absolute right-0.5 top-0.5"
+            ></div>
+          </div>
+        </div>
+      </div>
+      <!-- card 11 -->
+      <div
+        class="card bg-slate-800 rounded-2xl p-5 shadow-lg flex flex-col h-full"
+        data-active="false"
+      >
+        <div class="flex gap-4 flex-1">
+          <img
+            src="./assets/images/logo-dom-snapshot.svg"
+            class="w-12 h-12 rounded-lg object-cover"
+          />
+          <div>
+            <h2 class="font-semibold text-lg">DOM Snapshot</h2>
+            <p class="text-slate-400 text-sm">
+              Capture and export DOM structures quickly.
+            </p>
+          </div>
+        </div>
+        <div class="flex justify-between items-center mt-4">
+          <button
+            class="border border-slate-600 px-6 py-2 rounded-3xl text-sm hover:bg-red-600 hover:border-red-600 hover:text-white"
+          >
+            Remove
+          </button>
+          <div
+            class="toggle w-9 h-5 bg-red-600 rounded-full relative cursor-pointer"
+          >
+            <div
+              class="w-4 h-4 bg-white rounded-full absolute right-0.5 top-0.5"
+            ></div>
+          </div>
+        </div>
+      </div>
+      <!-- card 12 -->
+      <div
+        class="card bg-slate-800 rounded-2xl p-5 shadow-lg flex flex-col h-full"
+        data-active="true"
+      >
+        <div class="flex gap-4 flex-1">
+          <img
+            src="./assets/images/logo-console-plus.svg"
+            class="w-12 h-12 rounded-lg object-cover"
+          />
+          <div>
+            <h2 class="font-semibold text-lg">ConsolePlus</h2>
+            <p class="text-slate-400 text-sm">
+              Enhanced developer console with advanced filtering and logging.
+            </p>
+          </div>
+        </div>
+        <div class="flex justify-between items-center mt-4">
+          <button
+            class="border border-slate-600 px-6 py-2 rounded-3xl text-sm hover:bg-red-600 hover:border-red-600 hover:text-white"
+          >
+            Remove
+          </button>
+          <div
+            class="toggle w-9 h-5 bg-red-600 rounded-full relative cursor-pointer"
+          >
+            <div
+              class="w-4 h-4 bg-white rounded-full absolute right-0.5 top-0.5"
+            ></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script>
+      // NOTE
+      const cards = document.querySelectorAll(".card");
+      const removeButtons = document.querySelectorAll(".card button");
+      const toggles = document.querySelectorAll(".toggle");
+      const filterAll = document.getElementById("filter-all");
+      const filterActive = document.getElementById("filter-active");
+      const filterInactive = document.getElementById("filter-inactive");
+      const filterButtons = [filterAll, filterActive, filterInactive];
+      const themeToggle = document.getElementById("theme-toggle");
+      const body = document.body;
+      const title = document.getElementById("main-title");
+      const topCard = document.getElementById("top-card");
+      let theme = "dark";
+      let isDark = true;
+
+      removeButtons.forEach((btn) => {
+        btn.addEventListener("click", () => {
+          btn.closest(".card").remove();
+        });
+      });
+
+      function syncToggleUI(card) {
+        const toggle = card.querySelector(".toggle");
+        const knob = toggle.querySelector("div");
+        const isActive = card.dataset.active === "true";
+
+        if (!filterAll.classList.contains("bg-red-600")) {
+          card.style.display = "none";
+        } //bagas
+
+        if (isActive) {
+          toggle.classList.add("bg-red-600");
+          toggle.classList.remove("bg-slate-600");
+          knob.classList.add("right-0.5");
+          knob.classList.remove("left-0.5");
+        } else {
+          toggle.classList.remove("bg-red-600");
+          toggle.classList.add("bg-slate-600");
+          knob.classList.remove("right-0.5");
+          knob.classList.add("left-0.5");
+        }
+      }
+
+      cards.forEach((card) => syncToggleUI(card));
+      toggles.forEach((toggle) => {
+        toggle.addEventListener("click", () => {
+          const card = toggle.closest(".card");
+          const isActive = card.dataset.active === "true";
+          card.dataset.active = isActive ? "false" : "true";
+          syncToggleUI(card);
+        });
+      });
+
+      function setActiveFilter(button) {
+        filterButtons.forEach((btn) => {
+          if (isDark) {
+            btn.classList.remove("bg-red-600", "text-black");
+            btn.classList.add("bg-slate-700", "text-white");
+          } else {
+            btn.classList.remove("bg-red-600", "text-white");
+            btn.classList.add("bg-white", "text-black");
+          }
+        });
+
+        if (isDark) {
+          button.classList.add("bg-red-600", "text-white");
+          button.classList.remove("bg-slate-700", "text-black");
+        } else {
+          button.classList.add("bg-red-600", "text-white");
+          button.classList.remove("bg-slate-900", "bg-white");
+        }
+      }
+
+      function updateFilter(type) {
+        cards.forEach((card) => {
+          const active = card.dataset.active === "true";
+
+          if (type === "all") card.style.display = "flex";
+          if (type === "active") card.style.display = active ? "flex" : "none";
+          if (type === "inactive")
+            card.style.display = !active ? "flex" : "none";
+        });
+      }
+
+      filterAll.addEventListener("click", () => {
+        console.log(filterAll);
+        setActiveFilter(filterAll);
+        updateFilter("all");
+      });
+
+      filterActive.addEventListener("click", () => {
+        setActiveFilter(filterActive);
+        updateFilter("active");
+      });
+
+      filterInactive.addEventListener("click", () => {
+        setActiveFilter(filterInactive);
+        updateFilter("inactive");
+      });
+
+      setActiveFilter(filterAll);
+      updateFilter("all");
+
+      const themeIcon = document.getElementById("theme-icon");
+      const mainTitle = document.getElementById("main-title");
+      const cardsAll = document.querySelectorAll(".card");
+      const tes = document.getElementById("tes");
+
+      let titleImage = null;
+
+      function applyDark() {
+        isDark = true;
+        changeThemeLayout();
+      }
+
+      function applyLight() {
+        isDark = false;
+        changeThemeLayout();
+      }
+
+      function changeThemeLayout() {
+        if (isDark) {
+          body.classList.remove(
+            "bg-gradient-to-br",
+            "from-blue-100",
+            "to-white",
+            "text-black",
+          );
+          body.classList.add("bg-slate-900", "text-white");
+
+          topCard.classList.remove("bg-white", "text-slate-800");
+          topCard.classList.add("bg-slate-800", "text-white");
+
+          tes.classList.remove("bg-slate-200", "text-white");
+          tes.classList.add("bg-slate-700", "text-bg-slate-800");
+
+          filterAll.classList.remove("bg-white", "text-black");
+          filterAll.classList.add("bg-slate-700", "text-white");
+
+          filterActive.classList.remove("bg-white", "text-black");
+          filterActive.classList.add("bg-slate-700", "text-white");
+
+          filterInactive.classList.remove("bg-white", "text-black");
+          filterInactive.classList.add("bg-slate-700", "text-white");
+
+          cardsAll.forEach((card) => {
+            card.classList.remove("bg-white", "text-black");
+            card.classList.add("bg-slate-800", "text-white");
+          });
+
+          themeIcon.src = "./assets/images/icon-sun.svg";
+
+          mainTitle.innerHTML = `
+        <div class="flex items-center gap-2">
+          <img src="./assets/images/logo (2).png" class="h-8">
+          <span>Extensions</span>
+        </div>
+      `;
+        } else if (!isDark) {
+          console.log("light mode");
+
+          body.classList.remove("bg-slate-900", "text-white");
+          body.classList.add(
+            "bg-gradient-to-br",
+            "from-blue-100",
+            "to-white",
+            "text-black",
+          );
+
+          topCard.classList.remove("bg-slate-800", "text-white");
+          topCard.classList.add("bg-white", "text-slate-800");
+
+          filterAll.classList.remove("bg-slate-700", "text-white");
+          filterAll.classList.add(
+            "bg-white",
+            // "text-black",
+            "focus-within:bg-red-600",
+          );
+
+          filterActive.classList.remove("bg-slate-700", "text-white");
+          filterActive.classList.add(
+            "bg-white",
+            // "text-black",
+            "focus-within:bg-red-600",
+          );
+
+          filterInactive.classList.remove("bg-slate-700", "text-white");
+          filterInactive.classList.add(
+            "bg-white",
+            // "text-black",
+            "focus-within:bg-red-600",
+          );
+
+          cardsAll.forEach((card) => {
+            card.classList.remove("bg-slate-800", "text-white");
+            card.classList.add("bg-white", "text-black");
+          });
+
+          themeIcon.src = "./assets/images/icon-moon.svg";
+
+          tes.classList.remove("bg-slate-700");
+          tes.classList.add("bg-slate-200");
+
+          if (!document.getElementById("light-logo")) {
+            const img = document.createElement("img");
+            img.src = "./assets/images/logo.svg";
+            img.className = "h-8";
+            img.id = "light-logo";
+          }
+          const headerLogo = document.getElementById("header-logo");
+
+          headerLogo.classList.add("hidden");
+          mainTitle.innerHTML = `<img src="./assets/images/logo.svg" class="h-8">`;
+        }
+        const activeBtn = filterButtons.find((btn) =>
+          btn.classList.contains("bg-red-600"),
+        );
+
+        if (activeBtn) {
+          setActiveFilter(activeBtn);
+        }
+      }
+      themeToggle.addEventListener("click", () => {
+        if (isDark) {
+          applyLight();
+        } else {
+          applyDark();
+        }
+      });
+    </script>
+  </body>
+</html>
